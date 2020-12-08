@@ -7,14 +7,17 @@ import com.aws.proserve.dip.order.domain.order.entity.types.OrderIdGenerator;
 import com.aws.proserve.dip.order.domain.order.entity.types.OrderStatus;
 import com.aws.proserve.dip.order.domain.order.event.OrderCreatedEvent;
 import com.aws.proserve.dip.order.domain.order.event.OrderPaidEvent;
+import com.aws.proserve.dip.order.domain.order.exception.OrderCanNotBePaidRepeatedlyException;
 import com.aws.proserve.dip.order.domain.order.exception.OrderFinalPriceNotSameWithOrderPaidPriceException;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Getter
 @Setter
@@ -50,7 +53,14 @@ public class Order extends CommonEntity {
     }
 
     public void pay(BigDecimal paidPrice) {
-        if (!finalPrice.getAmount().equals(paidPrice)) {
+        if (getStatus() == OrderStatus.PAID) {
+            HashMap<String, Object> mymap = new HashMap<String, Object>() {
+                {
+                    put("orderId", getId());
+                }
+            };
+            throw new OrderCanNotBePaidRepeatedlyException(mymap);
+        } else if (!finalPrice.getAmount().equals(paidPrice)) {
             HashMap<String, Object> mymap = new HashMap<String, Object>() {
                 {
                     put("finalPrice", finalPrice.getAmount());

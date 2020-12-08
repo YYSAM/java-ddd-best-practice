@@ -19,14 +19,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void pay(Order order, BigDecimal paidPrice) {
-        if (order.getStatus() == OrderStatus.PAID) {
-            HashMap<String, Object> mymap = new HashMap<String, Object>() {
-                {
-                    put("orderId", order.getId());
-                }
-            };
-            throw new OrderCanNotBePaidRepeatedlyException(mymap);
-        }
+
         order.pay(paidPrice);
     }
 
