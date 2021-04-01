@@ -1,9 +1,6 @@
 package com.aws.proserve.dip.common.type;
 
 import com.aws.proserve.dip.common.exception.MoneyNotNullException;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.util.Currency;
@@ -25,7 +22,7 @@ public class Money {
     public Money(BigDecimal amount, Currency currency) {
 
         if (amount == null) {
-            throw new MoneyNotNullException();
+            throw new com.aws.proserve.dip.common.exception.MoneyNotNullException();
         }
         this.amount = amount;
         this.currency = currency;

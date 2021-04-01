@@ -14,10 +14,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.aws.proserve.dip</groupId>
             <artifactId>order-domain</artifactId>
             <version>${order.version}</version>

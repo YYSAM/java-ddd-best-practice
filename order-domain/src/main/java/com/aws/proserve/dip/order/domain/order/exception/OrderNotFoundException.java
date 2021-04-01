@@ -2,7 +2,6 @@ package com.aws.proserve.dip.order.domain.order.exception;
 
 import com.aws.proserve.dip.common.exception.CommonException;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class OrderNotFoundException extends CommonException {

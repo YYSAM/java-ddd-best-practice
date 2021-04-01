@@ -13,10 +13,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.aws.proserve.dip</groupId>
             <artifactId>proserve-common</artifactId>
             <version>${order.version}</version>
