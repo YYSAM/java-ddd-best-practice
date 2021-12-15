@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>com.aws.proserve.dip</groupId>
-        <artifactId>ddd.professional.level3</artifactId>
+        <groupId>com.aws.proserve.mad</groupId>
+        <artifactId>ddd.standard</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -13,13 +13,11 @@
 
 
     <dependencies>
+        <!-- 以下依赖的第三方包可以感觉实际需要进行替换 -->
         <dependency>
-            <groupId>com.aws.proserve.dip</groupId>
-            <artifactId>order-domain</artifactId>
-            <version>${order.version}</version>
-            <scope>compile</scope>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
         </dependency>
     </dependencies>
-
 
 </project>
