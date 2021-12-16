@@ -1,7 +1,7 @@
 package com.aws.proserve.mad.common.event;
 
-import org.springframework.context.ApplicationEvent;
-import org.springframework.scheduling.annotation.Async;
+import com.aws.proserve.mad.common.CommonEvent;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.event.TransactionPhase;
 import org.springframework.transaction.event.TransactionalEventListener;
@@ -9,11 +9,12 @@ import org.springframework.transaction.event.TransactionalEventListener;
 @Component
 public class EventRepositoryImpl {
 
-    @Async
-    @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT, fallbackExecution = true)
-    public void processEvent(ApplicationEvent event) {
+    @Order
+    @TransactionalEventListener(phase = TransactionPhase.BEFORE_COMMIT,
+            condition = "#event.isPropagation == false", fallbackExecution = true)
+    public void processEvent(CommonEvent event) {
         // 保存事件到事件表中；
-        System.out.println(event);
+        System.out.println(event.getSource());
     }
 
 }

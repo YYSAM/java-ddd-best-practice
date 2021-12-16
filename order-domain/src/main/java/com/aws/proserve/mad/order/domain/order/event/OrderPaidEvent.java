@@ -1,12 +1,11 @@
 package com.aws.proserve.mad.order.domain.order.event;
 
-import com.aws.proserve.mad.order.domain.order.entity.Order;
-import org.springframework.context.ApplicationEvent;
+import com.aws.proserve.mad.common.CommonEvent;
 
 
-public class OrderPaidEvent extends ApplicationEvent {
+public class OrderPaidEvent extends CommonEvent {
 
-    public OrderPaidEvent(Order order) {
-        super(order);
+    public OrderPaidEvent(Object source) {
+        super(source);
     }
 }
