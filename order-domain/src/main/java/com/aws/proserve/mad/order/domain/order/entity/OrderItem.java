@@ -1,7 +1,7 @@
 package com.aws.proserve.mad.order.domain.order.entity;
 
-import com.aws.proserve.mad.common.CommonEntity;
-import com.aws.proserve.mad.common.type.Money;
+import com.aws.proserve.mad.common.entity.CommonEntity;
+import com.aws.proserve.mad.common.entity.type.Money;
 import com.aws.proserve.mad.order.domain.order.entity.types.OrderStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

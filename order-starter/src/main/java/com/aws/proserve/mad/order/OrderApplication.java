@@ -1,10 +1,9 @@
 package com.aws.proserve.mad.order;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.context.ApplicationContext;
 
 import javax.annotation.PostConstruct;
 import java.util.TimeZone;
@@ -12,14 +11,14 @@ import java.util.TimeZone;
 import static java.time.ZoneId.of;
 import static java.util.TimeZone.getTimeZone;
 
-@SpringBootApplication(scanBasePackages={"com.aws.proserve.mad.order", "com.aws.proserve.mad.common"})
-@EnableJpaRepositories
+@Slf4j
+@SpringBootApplication(scanBasePackages = {"com.aws.proserve.mad.order", "com.aws.proserve.mad.common"})
 public class OrderApplication {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(OrderApplication.class);
-
     public static void main(String[] args) {
-        SpringApplication.run(OrderApplication.class, args);
+        ApplicationContext applicationContext = SpringApplication.run(OrderApplication.class, args);
+
+        log.info("Order Application is started!");
     }
 
     @PostConstruct

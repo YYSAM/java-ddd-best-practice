@@ -1,6 +1,6 @@
 package com.aws.proserve.mad.order.persistence.po;
 
-import com.aws.proserve.mad.common.type.Money;
+import com.aws.proserve.mad.common.entity.type.Money;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

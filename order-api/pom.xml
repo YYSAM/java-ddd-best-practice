@@ -8,32 +8,17 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>order-persistence</artifactId>
+
+    <artifactId>order-api</artifactId>
+
 
     <dependencies>
-        <dependency>
-            <groupId>com.aws.proserve.mad</groupId>
-            <artifactId>order-domain</artifactId>
-            <version>${order.version}</version>
-        </dependency>
         <dependency>
             <groupId>com.aws.proserve.mad</groupId>
             <artifactId>order-infrastructure</artifactId>
             <version>${order.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>${mybatis-plus.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-core</artifactId>
-        </dependency>
     </dependencies>
+
 
 </project>
