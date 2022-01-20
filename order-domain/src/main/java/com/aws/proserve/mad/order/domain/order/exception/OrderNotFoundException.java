@@ -10,7 +10,7 @@ public class OrderNotFoundException extends CommonException {
     public OrderNotFoundException() {
         super(409, "ORDER_NOT_FOUND", "order not found");
     }
-    
+
     public OrderNotFoundException(Map<String, Object> data) {
         super(409, "ORDER_NOT_FOUND", "order not found", data);
     }

@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * 保存订单与订单项（订单项在存储层被弱化，例如和订单打散为一个MongoDB中的Collection）
- *
+ * <p>
  * 具体的DAO实现，可以是JPA或者自己写的JDBC的类
  * 主要目的是数据库/存储的数据操作
  * 可以根据需要进一步抽象为接口层，有多种不同的数据源实现
@@ -30,7 +30,7 @@ public class OrderDemoDAO {
 
     public List<OrderPO> selectByUserId(Long createPersonId) {
         ArrayList<OrderPO> list = new ArrayList<>();
-        
+
         OrderPO orderPO = new OrderPO();
         orderPO.setId(123L);
         orderPO.setCellPhoneNumber("12345678");

@@ -10,15 +10,15 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring")
 public interface OrderDTOMapper {
-    OrderDTOMapper INSTANCE = Mappers.getMapper( OrderDTOMapper.class );
+    OrderDTOMapper INSTANCE = Mappers.getMapper(OrderDTOMapper.class);
 
     @Mappings({
-            @Mapping(source = "id.value",target = "id"),
-            @Mapping(source = "totalPrice.amount",target = "totalPrice"),
-            @Mapping(source = "totalPrice.currency",target = "currency"),
-            @Mapping(source = "address.customerName",target = "customerName"),
-            @Mapping(source = "address.fullAddress",target = "fullAddress"),
-            @Mapping(source = "address.cellPhoneNumber",target = "cellPhoneNumber")
+            @Mapping(source = "id.value", target = "id"),
+            @Mapping(source = "totalPrice.amount", target = "totalPrice"),
+            @Mapping(source = "totalPrice.currency", target = "currency"),
+            @Mapping(source = "address.customerName", target = "customerName"),
+            @Mapping(source = "address.fullAddress", target = "fullAddress"),
+            @Mapping(source = "address.cellPhoneNumber", target = "cellPhoneNumber")
     })
     OrderDTO toOrderDTO(Order order);
 

@@ -13,7 +13,7 @@ public class TraceContextUtil {
 
 
     public static TraceContext get() {
-       return context.get();
+        return context.get();
     }
 
     public static void remove() {

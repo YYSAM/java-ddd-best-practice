@@ -13,7 +13,7 @@ public class OrderId {
     private String value;
 
     public OrderId(String value) {
-        if (value == null || "".equals(value)){
+        if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("the order id cannot be null");
         }
         this.value = value;

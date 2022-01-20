@@ -17,11 +17,6 @@ public abstract class CommonEvent<T> extends ApplicationEvent {
         return isInnerEvent;
     }
 
-    @Override
-    public T getSource() {
-        return (T) super.getSource();
-    }
-
     public void setInnerEvent(boolean innerEvent) {
         isInnerEvent = innerEvent;
     }
