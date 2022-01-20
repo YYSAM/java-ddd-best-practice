@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public abstract class CommonEntity {
 
-    private ApplicationEventPublisher applicationEventPublisher;
+    private static ApplicationEventPublisher applicationEventPublisher;
 
     /**
      * 公共属性；
@@ -31,15 +31,15 @@ public abstract class CommonEntity {
     private Status status;
     private Integer version;
 
-    protected final void publishEvent(ApplicationEvent event) {
-        getApplicationEventPublisher().publishEvent(event);
-    }
-
-    public ApplicationEventPublisher getApplicationEventPublisher() {
+    public static ApplicationEventPublisher getApplicationEventPublisher() {
         if (applicationEventPublisher == null) {
             applicationEventPublisher = ApplicationContextProvider.getBean(ApplicationEventPublisher.class);
         }
         return applicationEventPublisher;
+    }
+
+    protected final void publishEvent(ApplicationEvent event) {
+        getApplicationEventPublisher().publishEvent(event);
     }
 
 }

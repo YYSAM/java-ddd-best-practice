@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-01-14T12:15:37+0800",
-    comments = "version: 1.4.1.Final, compiler: javac, environment: Java 11.0.9 (JetBrains s.r.o.)"
+    date = "2022-01-20T17:11:26+0800",
+    comments = "version: 1.4.1.Final, compiler: javac, environment: Java 11.0.14 (Amazon.com Inc.)"
 )
 @Component
 public class OrderItemPOMapperImpl implements OrderItemPOMapper {

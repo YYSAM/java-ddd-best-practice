@@ -9,13 +9,13 @@ import java.math.BigDecimal;
 public class OrderServiceImpl implements OrderService {
 
     @Override
-    public Order createNewOrder() {
-        return null;
+    public void pay(Order order, BigDecimal paidPrice) {
+        order.pay(paidPrice);
     }
 
     @Override
-    public void pay(Order order, BigDecimal paidPrice) {
-        order.pay(paidPrice);
+    public void refund(Order order) {
+        order.refund();
     }
 
 }

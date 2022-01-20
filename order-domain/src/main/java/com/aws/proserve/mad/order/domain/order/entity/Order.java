@@ -43,13 +43,9 @@ public class Order extends CommonEntity {
         order.setCreateDateTime(LocalDateTime.now());
         order.setCreatePersonId(createPersonId);
 
+        order.publishEvent(new OrderCreatedEvent(order));
         return order;
     }
-
-    public void newOrder() {
-        this.publishEvent(new OrderCreatedEvent(this));
-    }
-
 
     public void pay(BigDecimal paidPrice) {
         if (getOrderStatus() == OrderStatus.PAID) {
@@ -77,4 +73,12 @@ public class Order extends CommonEntity {
         publishEvent(new OrderPaidEvent(this));
     }
 
+    public void refund() {
+
+        // 更新订单状态；
+        this.orderStatus = OrderStatus.REFUND;
+        this.getItems().forEach(OrderItem::refund);
+
+        publishEvent(new OrderPaidEvent(this));
+    }
 }

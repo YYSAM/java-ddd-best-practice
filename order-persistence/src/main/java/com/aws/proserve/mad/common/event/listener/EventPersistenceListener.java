@@ -1,5 +1,9 @@
-package com.aws.proserve.mad.common.event;
+package com.aws.proserve.mad.common.event.listener;
 
+import com.aws.proserve.mad.common.event.CommonEvent;
+import com.aws.proserve.mad.common.event.EventRepositoryImpl;
+import com.aws.proserve.mad.common.event.EventStatus;
+import com.aws.proserve.mad.common.event.po.EventPO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.event.EventListener;
@@ -22,7 +26,7 @@ public class EventPersistenceListener {
 
     @Order
     @EventListener(condition = "#event.isInnerEvent == false")
-    public void processEvent(CommonEvent event) throws JsonProcessingException {
+    public void processEvent(CommonEvent<Object> event) throws JsonProcessingException {
 
         // 保存事件到事件表中；
         EventPO eventPO = new EventPO();

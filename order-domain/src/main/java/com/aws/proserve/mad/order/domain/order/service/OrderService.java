@@ -6,8 +6,7 @@ import java.math.BigDecimal;
 
 public interface OrderService {
 
-    Order createNewOrder();
-
     void pay(Order order, BigDecimal paidPrice);
 
+    void refund(Order order);
 }

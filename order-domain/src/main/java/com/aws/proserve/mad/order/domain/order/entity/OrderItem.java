@@ -14,6 +14,7 @@ import java.math.BigDecimal;
 @Builder
 @AllArgsConstructor
 public class OrderItem extends CommonEntity {
+    private Long id;
     private String productId;
     private int productCount;
     private Money unitPrice;
@@ -34,4 +35,7 @@ public class OrderItem extends CommonEntity {
         this.orderItemStatus = OrderStatus.PAID;
     }
 
+    public void refund() {
+
+    }
 }
