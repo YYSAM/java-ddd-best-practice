@@ -33,7 +33,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <order.version>1.0-SNAPSHOT</order.version>
         <mybatis-plus.version>3.4.3.4</mybatis-plus.version>
-        <org.mapstruct.version>1.4.1.Final</org.mapstruct.version>
+        <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
         <org.projectlombok.version>1.18.18</org.projectlombok.version>
         <org.mockito.version>3.8.0</org.mockito.version>
     </properties>
